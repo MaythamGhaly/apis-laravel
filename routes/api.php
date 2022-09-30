@@ -7,7 +7,7 @@ use App\Http\Controllers\ApisController;
 Route::post("/decompose_number", [ApisController::class, 'decomposeNumber']);
 Route::post("/sort_string", [ApisController::class, 'sortString']);
 Route::post("/to_binary", [ApisController::class, 'toBinary']);
-
+Route::post("/test", [ApisController::class, 'sortString']);
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
