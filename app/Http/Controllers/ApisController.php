@@ -29,7 +29,7 @@ class ApisController extends Controller
     {
         $input = $request->input;
         $patterns = [
-            '/[0-9]+/' => function ($matches) {
+            '/[0-9]/' => function ($matches) {
                 return decbin($matches[0]);
             }
         ];
