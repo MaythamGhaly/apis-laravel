@@ -41,4 +41,30 @@ class ApisController extends Controller
         ]);
     }
 
-    
+    function sortString(Request $request)
+    {
+        $str = $request->str;
+        $x = preg_split("/[a-z]/", $str);
+        for ($i = 0; $i < count($x); $i++) {
+            if (is_numeric($x[$i])) {
+                $x[$i] = decbin($x[$i]);
+            }
+        }
+        // $str=str_split($str);
+        // sort($str);
+
+        // for($i=0;$i<count($str);$i++){
+        //     if (is_numeric($str[$i])){
+        //         echo preg_split($str[$i]);
+        //     }
+        // }
+
+
+
+
+        return response()->json([
+            "status" => "success",
+            "str_sort" => $str
+        ]);
+    }
+}
